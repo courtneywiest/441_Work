@@ -1,0 +1,1 @@
+I was definitely confused at first with this new material. I read through it many times. Eventually everything started to make sense, and I knew what we were doing. I also did have trouble accessing the example link, but I was able to figure that out with the Professor.
