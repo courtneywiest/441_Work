@@ -1,0 +1,1 @@
+I had a lot of trouble this week. I was really confused at first. Eventually I think I started to get the hang of it, although nothing happens on my website when I click my buttons. I didn't have enough time to style it all that much, but I am going to get that done tomorrow. 

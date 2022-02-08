@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * {
+  }
+
+
+
+
+.main-container {
+  width: 99%;
+ height: 188vw;
+  background-color: #B0B0B0;
+  border: solid black;
+  margin-left: 3px;
+  display: flex;
+  overflow-wrap: break-word;
+  flex-direction: column;
+  font-family: sans-serif;
+
+}
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+
+
+</body>
+
+
+</html>
