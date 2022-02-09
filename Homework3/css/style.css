@@ -1,40 +1,105 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  * {
-  }
 
 
-
-
-.main-container {
-  width: 99%;
- height: 188vw;
-  background-color: #B0B0B0;
-  border: solid black;
-  margin-left: 3px;
-  display: flex;
+*
+{ background-color: #ABFBC1  ;
   overflow-wrap: break-word;
   flex-direction: column;
   font-family: sans-serif;
+  align-content: center;
 
 }
 
+button{
+  width: 30%;
+  height: 64px;
+  font-family: tomarik-display-shadow, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  font-size: 1em;
+  background-color: #A2F0E6;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 50px;
+  padding: 1em;
+ justify-content: center;
+ align-items: center;
+ vertical-align: middle;
+
+}
+
+button:hover {
+    border-color: black;
+    color: #FFFFFF;
+    background-color: #5C8F8D;
+}
+
+
+ .buttoncontainer {
+   width: 100%;
+    height: auto;
+    font-family: tomarik-display-shadow, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 1px 1px rgb(63, 62, 62);
+    background-color:;
+    vertical-align: middle;
+    line-height: 15px;
+    border-radius: 5px;
+    margin-top: .8em;
+
+ }
 
 
 
 
 
 
-</style>
-</head>
-
-<body>
-
-
-
-</body>
+ #beginning {
+   font-weight: bold;
+   text-align: center;
+   font-size: 1.2em;
+ }
 
 
-</html>
+
+
+
+h3 {
+
+     font-family: tomarik-display-shadow, sans-serif;
+     font-weight: bold;
+     font-style: normal;
+     text-align: center;
+     color: black;
+     font-size: 3.5em;
+
+ }
+
+
+
+
+
+
+img {
+    width: 70%;
+    height: auto;
+    display: block;
+    padding: 3em;
+    box-shadow: 0 10px 10px 5px #7D7D7D;
+    background-color:#F9ACE4;
+    margin: auto;
+    display: block;
+    margin-bottom: 50px;
+
+ }
+
+
+ .pic {
+   text-align: center;
+ }
