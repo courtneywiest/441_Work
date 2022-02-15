@@ -37,10 +37,11 @@
           <input type="text" size="30" id="choice2" value="Enter Change or Don't Change" style="display:none">
           <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
 
-          <input type="text" size="30" id="choice3" value="Enter Change or Don't Change"  style="display:none">
+          <input type="text" size="30" id="choice3" value="Check it out or It's Mom"  style="display:none">
           <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
 
-
+          <input type="text" size="30" id="choice4" value="Check it out or It's Mom"  style="display:none">
+          <button id="btnSubmit4" onclick="getChoice4();" style="display:none">Click to continue</button>
 
 
 
@@ -91,18 +92,24 @@
                var myQuestion = document.getElementById("question");
                if(answer === "Change")
                {
+                 document.getElementById("choice").style.display="none";
+                 document.getElementById("btnSubmit").style.display="none";
 
+                 document.getElementById("choice3").style.display="block";
+                 document.getElementById("btnSubmit3").style.display="block";
                    myQuestion.innerHTML = "Good choice! <br> You get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
                }
                else if(answer === "Don't Change")
                {
+                 document.getElementById("choice").style.display="none";
+                 document.getElementById("btnSubmit").style.display="none";
+
+                 document.getElementById("choice4").style.display="block";
+                 document.getElementById("btnSubmit4").style.display="block";
+
                    myQuestion.innerHTML = "You're risky! <br> ou get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
                }
 
-               else
-               {
-                 my.Question.innerHTML = "Invalid answer";
-               }
 
            }
 
