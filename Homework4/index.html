@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+        <meta charset="UTF-8">
+        <meta name="description" content="a story about adventure">
+        <meta name="author" content="Becky GH">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Choose your own adventure</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="main.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+  <h1>Your new (haunted) house.</h1>
+          <br>
+          <img src="tree.jpeg" id="mainImage">
+      <div id="question">
+      <br>
+          You and your mom have just moved into your own house. You have a big yard and a big kitchen.
+          <br>
+          Your mom is letting you paint your room a different color.
+          <br>
+          You have only two choices.  Grey or Blue.
+      </div>
+
+          <br>
+          <input type="text" size="30" id="choice" value="Please enter Grey or Blue">
+          <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
+
+          <input type="text" size="30" id="choice2" value="Enter Change or Don't Change" style="display:none">
+          <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
+
+          <input type="text" size="30" id="choice3" value="Enter Change or Don't Change"  style="display:none">
+          <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
+
+
+
+
+
+
+
+
+
+
+ <script>
+   function getChoice1()
+             {
+                 var myChoice = document.getElementById("choice").value;
+                 var myQuestion = document.getElementById("question");
+                 if(myChoice === "Grey")
+            {
+              document.getElementById("choice").style.display="none";
+              document.getElementById("btnSubmit").style.display="none";
+
+              document.getElementById("choice2").style.display="block";
+              document.getElementById("btnSubmit2").style.display="block";
+
+              myQuestion.innerHTML = "Grey is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on? "
+            }
+
+
+
+            else if(myChoice === "Blue")
+            {
+                document.getElementById("choice").style.display="none";
+                document.getElementById("btnSubmit").style.display="none";
+
+                document.getElementById("choice3").style.display="block";
+                document.getElementById("btnSubmit3").style.display="block";
+
+                myQuestion.innerHTML = "Blue is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
+
+            }
+
+            else
+            {
+              my.Question.innerHTML = "Invalid answer";
+            }
+       }
+
+       function getChoice2()
+           {
+               var answer = document.getElementById("choice2").value;
+               var myQuestion = document.getElementById("question");
+               if(answer === "Change")
+               {
+
+                   myQuestion.innerHTML = "Good choice! <br> You get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
+               }
+               else if(answer === "Don't Change")
+               {
+                   myQuestion.innerHTML = "You're risky! <br> ou get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
+               }
+
+               else
+               {
+                 my.Question.innerHTML = "Invalid answer";
+               }
+
+           }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>
