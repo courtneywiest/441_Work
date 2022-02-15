@@ -37,10 +37,10 @@
           <input type="text" size="30" id="choice2" value="Enter Change or Don't Change" style="display:none">
           <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
 
-          <input type="text" size="30" id="choice3" value="Check it out or It's Mom"  style="display:none">
+          <input type="text" size="30" id="choice3" value="Enter yes or no"  style="display:none">
           <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
 
-          <input type="text" size="30" id="choice4" value="Check it out or It's Mom"  style="display:none">
+          <input type="text" size="30" id="choice4" value="Cslowlysomething"  style="display:none">
           <button id="btnSubmit4" onclick="getChoice4();" style="display:none">Click to continue</button>
 
 
@@ -73,8 +73,8 @@
                 document.getElementById("choice").style.display="none";
                 document.getElementById("btnSubmit").style.display="none";
 
-                document.getElementById("choice3").style.display="block";
-                document.getElementById("btnSubmit3").style.display="block";
+                document.getElementById("choice2").style.display="block";
+                document.getElementById("btnSubmit2").style.display="block";
 
                 myQuestion.innerHTML = "Blue is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
 
@@ -99,19 +99,23 @@
                  document.getElementById("btnSubmit3").style.display="block";
                    myQuestion.innerHTML = "Good choice! <br> You get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
                }
+
                else if(answer === "Don't Change")
                {
                  document.getElementById("choice").style.display="none";
                  document.getElementById("btnSubmit").style.display="none";
 
-                 document.getElementById("choice4").style.display="block";
-                 document.getElementById("btnSubmit4").style.display="block";
+                 document.getElementById("choice3").style.display="block";
+                 document.getElementById("btnSubmit3").style.display="block";
 
-                   myQuestion.innerHTML = "You're risky! <br> ou get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
+                  myQuestion.innerHTML = "You're risky! <br> You get started painting, but as you start, you hear odd footsteps upstairs. It is probably just Mom right? I thought she was outside..."
                }
 
-
-           }
+               else
+               {
+                 my.Question.innerHTML = "Invalid answer";
+               }
+        }
 
 
 
