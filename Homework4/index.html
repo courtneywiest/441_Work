@@ -23,6 +23,7 @@
 
         }
 
+
          #question {
            font-size: 2.9vw;
            padding:4px;
@@ -76,10 +77,11 @@
              font-family: tomarik-display-shadow, sans-serif;
              font-weight: 500;
              font-style: normal;
-             background-color:;
+             text-align: center;
              vertical-align: middle;
              line-height: 15px;
              border-radius: 5px;
+             margin-top:
 
 
           }
@@ -122,39 +124,6 @@
 </head>
 
 <body>
-
-
-
-
-  <h1>Your new (haunted) house.</h1>
-          <br>
-          <img src="./images/haunted-house.jpeg" id="mainImage" alt="oldhouse" width="99%">
-    <div id="question">
-
-      <br>
-          <p>You and your mom have just moved into your own house. You have a big yard and a big kitchen.
-          <br>
-          <br>
-          Your mom is letting you paint your room a different color.
-          <br>
-          <br>
-          You have only two choices.  Grey or Blue.</p>
-    </div>
-
-          <br>
-
-        <div id="buttoncontainer">
-          <div style="overflow: hidden; padding-right: .5em;">
-          <input type="text" size="30" id="choice" value="Please enter Grey or Blue">
-        </div>
-          <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
-
-          <input type="text" size="30" id="choice2" value="Enter Change or Don't Change" style="display:none">
-          <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
-
-          <input type="text" size="30" id="choice3" value="Enter yes or no"  style="display:none">
-          <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
-        </div>
 
 
 
@@ -208,9 +177,7 @@
                      if(answer === "Change")
                 {
 
-                  document.getElementById("mainImage").src = "./images/haunted-house".style.display = "none";
-
-
+                  <img src="./images/haunted-house.jpeg" id="mainImage" alt="oldhouse" width="99%">
 
                   myQuestion.innerHTML = "Grey is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br><br> Do you go change into old clothes or do you keep on the clothes you have on? ";
                 }
@@ -219,19 +186,14 @@
 
                 else if(answer === "Don't Change")
                 {
-                  document.getElementById("mainImage").src = "./images/haunted-house";
-                  document.getElementById("choice3").style.display="block";
 
 
-
+                    document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
                     myQuestion.innerHTML = "Blue is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
 
                 }
 
-                else
-                {
-                  my.Question.innerHTML = "Invalid answer";
-                }
+
 }
 
 
@@ -242,12 +204,13 @@
 
           if(answer === "yes")
           {
-            document.getElementById(image);
+            document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
             myQuestion.innerHTML = "changed clothes n stuff"
           }
 
           else if(answer === "no")
           {
+            document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
             myQuestion.innerHTML = "didn't change clothes"
           }
         }
@@ -256,39 +219,39 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </script>
+
+
+
+  <h1>Your new (haunted) house.</h1>
+          <br>
+          <img src="./images/haunted-house.jpeg" id="mainImage" alt="oldhouse" width="99%">
+    <div id="question">
+
+      <br>
+          <p>You and your mom have just moved into your own house. You have a big yard and a big kitchen.
+          <br>
+          <br>
+          Your mom is letting you paint your room a different color.
+          <br>
+          <br>
+          You have only two choices.  Grey or Blue.</p>
+    </div>
+
+          <br>
+
+        <div id="buttoncontainer" class="buttoncontainer">
+
+
+          <input type="text" size="30" id="choice" value="Please enter Grey or Blue">
+          <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
+
+          <input type="text" size="30" id="choice2" value="Enter Change or Don't Change" style="display:none">
+          <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
+
+          <input type="text" size="30" id="choice3" value="Enter yes or no">
+          <button id="btnSubmit3" onclick="getChoice3();"  style="display:none">Click to continue</button>
+        </div>
 
 
 
