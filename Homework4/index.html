@@ -88,9 +88,10 @@
 
        function getChoice2()
            {
-               var answer = document.getElementById("choice2").value;
+               var myChoice = document.getElementById("choice2").value;
                var myQuestion = document.getElementById("question");
-               if(answer === "Change")
+
+               if(myChoice === "Change")
                {
                  document.getElementById("choice").style.display="none";
                  document.getElementById("btnSubmit").style.display="none";
@@ -100,13 +101,12 @@
                    myQuestion.innerHTML = "Good choice! <br> You get started painting, but as you start painting, you hear footsteps upstairs. It is probably just Mom right?";
                }
 
-               else if(answer === "Don't Change")
+               else if(myChoice === "Don't Change")
                {
                  document.getElementById("choice").style.display="none";
                  document.getElementById("btnSubmit").style.display="none";
 
-                 document.getElementById("choice3").style.display="block";
-                 document.getElementById("btnSubmit3").style.display="block";
+                 
 
                   myQuestion.innerHTML = "You're risky! <br> You get started painting, but as you start, you hear odd footsteps upstairs. It is probably just Mom right? I thought she was outside..."
                }
