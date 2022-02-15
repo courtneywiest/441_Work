@@ -8,9 +8,113 @@
         <meta name="author" content="Becky GH">
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
         <title>Choose your own adventure</title>
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="main.js"></script>
 
+
+
+        <style>
+
+
+        *
+        {
+          flex-direction: column;
+          padding: 7px;
+
+        }
+
+         #question {
+           font-size: 2.7vw;
+           margin-top: -49px;
+         }
+
+
+        h1 {
+             font-weight: bold;
+             font-style: normal;
+             text-align: center;
+             color: black;
+             font-size: 2.2em;
+             padding: 25px;
+         }
+
+         button{
+           width: 160px;
+           height: 34px;
+           font-family: tomarik-display-shadow, sans-serif;
+           font-weight: 500;
+           font-style: normal;
+           text-align: center;
+           font-size: .9em;
+           background-color: 6;
+           border: 1.5px solid black;
+           border-radius: 5px;
+           display: inline-block;
+           margin-left: 8px;
+           margin-right: px;
+           margin-bottom: 50px;
+           padding: 1em;
+          justify-content: center;
+          align-items: center;
+          vertical-align: middle;
+
+         }
+
+         button:hover {
+             border-color: black;
+             color: white;
+             background-color: black;
+         }
+
+          .buttoncontainer {
+            width: 100%;
+             height: auto;
+             font-family: tomarik-display-shadow, sans-serif;
+             font-weight: 500;
+             font-style: normal;
+             text-align: ;
+
+             background-color:;
+             vertical-align: middle;
+             line-height: 15px;
+             border-radius: 5px;
+             margin: auto;
+
+          }
+
+         input {
+          width: 400px;
+          height: 4px;
+          font-family: tomarik-display-shadow, sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          text-align: ;
+          font-size: .9em;
+          background-color:;
+          border: 1.2px solid black;
+          border-radius: 5px;
+          display: inline-block;
+          margin-left: px;
+          margin-right: px;
+          margin-bottom: 15px;
+          padding: 1em;
+         justify-content: center;
+         align-items:
+         vertical-align: middle;
+
+        }
+
+        img {
+            width: 70%;
+            height: auto;
+            display: block;
+            padding: 3em;
+            margin: auto;
+            display: block;
+            margin-top: -79px;
+            margin-bottom: -10px;
+
+
+         }
+</style>
 </head>
 
 <body>
@@ -21,7 +125,8 @@
   <h1>Your new (haunted) house.</h1>
           <br>
           <img src="./images/haunted-house.jpeg" id="mainImage" alt="oldhouse" width="99%">
-      <div id="question">
+    <div id="question">
+
       <br>
           <p>You and your mom have just moved into your own house. You have a big yard and a big kitchen.
           <br>
@@ -30,7 +135,7 @@
           <br>
           <br>
           You have only two choices.  Grey or Blue.</p>
-      </div>
+    </div>
 
           <br>
 
@@ -66,7 +171,7 @@
               document.getElementById("choice2").style.display="block";
               document.getElementById("btnSubmit2").style.display="block";
 
-              myQuestion.innerHTML = "Grey is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on? "
+              myQuestion.innerHTML = "Grey is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br><br> Do you go change into old clothes or do you keep on the clothes you have on? "
             }
 
 
@@ -79,7 +184,7 @@
                 document.getElementById("choice2").style.display="block";
                 document.getElementById("btnSubmit2").style.display="block";
 
-                myQuestion.innerHTML = "Blue is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
+                myQuestion.innerHTML = "Blue is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br><br> Do you go change into old clothes or do you keep on the clothes you have on?";
 
             }
 
@@ -103,7 +208,7 @@
 
 
 
-                  myQuestion.innerHTML = "Grey is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on? ";
+                  myQuestion.innerHTML = "Grey is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br><br> Do you go change into old clothes or do you keep on the clothes you have on? ";
                 }
 
 
@@ -115,7 +220,7 @@
 
 
 
-                    myQuestion.innerHTML = "Blue is a great choice! <br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
+                    myQuestion.innerHTML = "Blue is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
 
                 }
 
