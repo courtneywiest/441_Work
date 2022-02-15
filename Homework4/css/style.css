@@ -31,18 +31,15 @@ h1 {
  }
 
 
-  {
-   font-size: 120%;
-   margin-left: 20px;
-
-
- }
 
   p {
    align-items: center;
-   font-size: 1.3em;
+   font-size: 3vw;
    margin-left: 20px;
+   margin-bottom: -2.5vw;
+
  }
+
 
 
 
