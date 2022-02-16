@@ -161,6 +161,8 @@
 
             }
 
+
+
             else
             {
               my.Question.innerHTML = "Invalid answer";
@@ -168,52 +170,137 @@
        }
 
 
-
        function getChoice2()
                  {
-                     var answer = document.getElementById("choice2").value;
+                     var myChoice = document.getElementById("choice2").value;
                      var myQuestion = document.getElementById("question");
 
-                     if(answer === "Change")
+                     if(myChoice === "Change")
                 {
 
-                  <img src="./images/haunted-house.jpeg" id="mainImage" alt="oldhouse" width="99%">
+                  document.getElementById("choice2").style.display="none";
+                  document.getElementById("btnSubmit2").style.display="none";
 
-                  myQuestion.innerHTML = "Grey is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br><br> Do you go change into old clothes or do you keep on the clothes you have on? ";
+                  document.getElementById("choice3").style.display="block";
+                  document.getElementById("btnSubmit3").style.display="block";
+
+                  document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                  myQuestion.innerHTML = "Good idea! <br><br> You start to get to work and you hear footsteps from upstairs. Do you check it out or continue painting?";
                 }
-
-
-
-                else if(answer === "Don't Change")
+                else if(myChoice === "Don't Change")
                 {
+                  document.getElementById("choice2").style.display="none";
+                  document.getElementById("btnSubmit2").style.display="none";
 
+                  document.getElementById("choice3").style.display="block";
+                  document.getElementById("btnSubmit3").style.display="block";
 
                     document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
-                    myQuestion.innerHTML = "Blue is a great choice! <br><br> You get ready to start painting. Mom might be upset if you ruin these clothes with paint, you're not so sure. <br> Do you go change into old clothes or do you keep on the clothes you have on?";
-
+                    myQuestion.innerHTML = "You're Risky! <br><br> You start to get to work and you hear footsteps from upstairs. Do you check it out or continue painting?";
                 }
 
+              }
 
-}
 
 
-        function getChoice3()
-        {
-          var answer = document.getElementById("choice3").value;
-          var myQuestion = document.getElementById("question");
+              function getChoice3()
+                        {
+                            var myChoice = document.getElementById("choice3").value;
+                            var myQuestion = document.getElementById("question");
 
-          if(answer === "yes")
-          {
-            document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
-            myQuestion.innerHTML = "changed clothes n stuff"
-          }
+                            if(myChoice === "Check it out")
+                       {
 
-          else if(answer === "no")
-          {
-            document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
-            myQuestion.innerHTML = "didn't change clothes"
-          }
-        }
+                         document.getElementById("choice3").style.display="none";
+                         document.getElementById("btnSubmit3").style.display="none";
+
+                         document.getElementById("choice4").style.display="block";
+                         document.getElementById("btnSubmit4").style.display="block";
+
+                         document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                         myQuestion.innerHTML = "Good idea! <br><br> You start to get to work and you hear footsteps from upstairs. Do you check it out or continue painting?";
+                       }
+                       else if(myChoice === "Continue painting")
+                       {
+                         document.getElementById("choice3").style.display="none";
+                         document.getElementById("btnSubmit3").style.display="none";
+
+                         document.getElementById("choice4").style.display="block";
+                         document.getElementById("btnSubmit4").style.display="block";
+
+                           document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                           myQuestion.innerHTML = "You're Risky! <br><br> You start to get to work and you hear footsteps from upstairs. Do you check it out or continue painting?";
+                       }
+
+                     }
+
+
+
+                     function getChoice4()
+                               {
+                                   var myChoice = document.getElementById("choice4").value;
+                                   var myQuestion = document.getElementById("question");
+
+                                   if(myChoice === "Continue on")
+                              {
+
+                                document.getElementById("choice4").style.display="none";
+                                document.getElementById("btnSubmit4").style.display="none";
+
+                                document.getElementById("choice").style.display="block";
+                                document.getElementById("btnSubmit").style.display="block";
+
+                                document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                                myQuestion.innerHTML = "Continue towards the stairs";
+                              }
+                              else if(myChoice === "Go back to painting")
+                              {
+                                document.getElementById("choice4").style.display="none";
+                                document.getElementById("btnSubmit4").style.display="none";
+
+                                document.getElementById("choice").style.display="block";
+                                document.getElementById("btnSubmit").style.display="block";
+
+                                  document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                                  myQuestion.innerHTML = "not invesigating sound - back to painting";
+                              }
+
+                            }
+
+                            function getChoice5()
+                                      {
+                                          var myChoice = document.getElementById("choice5").value;
+                                          var myQuestion = document.getElementById("question");
+
+                                          if(myChoice === "Continue on")
+                                     {
+
+                                       document.getElementById("choice5").style.display="none";
+                                       document.getElementById("btnSubmit5").style.display="none";
+
+                                       document.getElementById("choice").style.display="block";
+                                       document.getElementById("btnSubmit").style.display="block";
+
+                                       document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                                       myQuestion.innerHTML = "Continue towards the stairs";
+                                     }
+                                     else if(myChoice === "Go back to painting")
+                                     {
+                                       document.getElementById("choice5").style.display="none";
+                                       document.getElementById("btnSubmit5").style.display="none";
+
+                                       document.getElementById("choice").style.display="block";
+                                       document.getElementById("btnSubmit").style.display="block";
+
+                                         document.getElementById("mainImage").src = "./images/haunted-house.jpeg"
+                                         myQuestion.innerHTML = "not invesigating sound - back to painting";
+                                     }
+
+                                   }
+
+
+
+
 
 
 
@@ -249,8 +336,18 @@
           <input type="text" size="30" id="choice2" value="Enter Change or Don't Change" style="display:none">
           <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
 
-          <input type="text" size="30" id="choice3" value="Enter yes or no">
+
+          <input type="text" size="30" id="choice3" value="Enter Check it out or Continue painting" style="display:none">
           <button id="btnSubmit3" onclick="getChoice3();"  style="display:none">Click to continue</button>
+
+          <input type="text" size="30" id="choice4" value="Enter Conintue on or Go back to painting" style="display:none">
+          <button id="btnSubmit4" onclick="getChoice4();"  style="display:none">Click to continue</button>
+
+          <input type="text" size="30" id="choice5" value="Enter Quit or Restart" style="display:none">
+          <button id="btnSubmit5" onclick="getChoice5();"  style="display:none">Click to continue</button>
+
+
+
         </div>
 
 
