@@ -1,6 +1,6 @@
 var imageTags = ["image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10"];
 
-var blankImagePath = "images/dogoker.jpeg";
+var blankImagePath = "images/dogpoker.jpeg";
 
 var actualImages = new Array();
 
@@ -26,7 +26,7 @@ var count = [0,0,0,0,0,0,0,0,0,0];
 
 while(actualImages.length < 10)
 {
-  var randomNumber = Math.floor(Math,random() * actualImagePath.length)
+  var randomNumber = Math.floor(Math.random() * actualImagePath.length)
 
   if(count[randomNumber] < 3)
   {
