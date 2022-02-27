@@ -68,3 +68,7 @@ table, th, td {
     border-color: rebeccapurple;
 
   }
+
+img {
+  max-width: 150px;
+}
