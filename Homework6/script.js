@@ -122,3 +122,10 @@ function playerInfo()
     document.getElementById("endInformation").innerHTML = str;
   }
 }
+
+
+
+document.getElementById("restartSubmit").onclick = function (restart)
+{
+  location.href = "indexIntro.html";
+}
