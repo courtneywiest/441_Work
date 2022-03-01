@@ -27,13 +27,13 @@ function createRandomImageArray()
 {
 var actualImagePath = ["./images/1-sleepytongue.jpeg", "./images/2-sandysherm.jpeg", "./images/3-crossedpaws.jpeg", "./images/4-goofysherm.jpeg", "./images/5-toay.jpeg", "./images/6-snowy.jpeg", "./images/7-birthday.jpeg", "./images/8-sneakay.jpg", "./images/p-lipies.jpeg", "./images/10-couchboi/jpeg"];
 
-var count = [0,0,0,0,0,0,0,0,0,0];
+var count = [0,0,0,0,0];
 
 while(actualImages.length < 10)
 {
   var randomNumber = Math.floor(Math.random() * actualImagePath.length)
 
-  if(count[randomNumber] < 3)
+  if(count[randomNumber] < 2)
   {
     actualImages.push(actualImagePath[randomNumber]);
 
