@@ -1,5 +1,3 @@
-
-
 var myViewFinderArray = new Array();
 
 
@@ -29,15 +27,14 @@ var myViewFinderArray = new Array();
  }
 
 
-var Img1 href = './images/ghost.jpeg';
+
 
    function initializeArray()
    {
 
-     var img1 = new Image();
-     href='./images/ghost.jpeg';
 
-     var myViewFinder1 = new ViewFinder( this.title = "Invisible Homeless", this.image = img1, this.description = "This life size glass sleeping figure was made as part of an Arts Council funded residency at the Glass Hub in UK. The artwork was made to highlight the growing number of hidden and invisible homeless people there now are. Shrouded in a blanket made of glass, the ghost-like figure, which has no gender, is a vulnerable and fragile form.", this.author = "Luke Jerram", this.year = "2015");
+
+     var myViewFinder1 = new ViewFinder( this.title = "Invisible Homeless", this.image = '/images/ghost.jpeg', this.description = "This life size glass sleeping figure was made as part of an Arts Council funded residency at the Glass Hub in UK. The artwork was made to highlight the growing number of hidden and invisible homeless people there now are. Shrouded in a blanket made of glass, the ghost-like figure, which has no gender, is a vulnerable and fragile form.", this.author = "Luke Jerram", this.year = "2015");
 
 
 
