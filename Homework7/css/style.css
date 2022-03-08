@@ -1,0 +1,22 @@
+
+* {
+  background-color: #dec1b4;
+  padding: 7px;
+  font-family: sans-serif;
+  line-height: 25px;
+}
+
+button {
+  text-align: center;
+  margin: 10px;
+  margin-top: 18px;
+  font-size: 10pt;
+  font-weight: bold;
+  width: 90px;
+  background-color: lightgrey;
+  font-family: sans-serif;
+}
+
+ .toString {
+   color:red;
+ }

@@ -16,7 +16,7 @@ var myViewFinderArray = new Array();
 
      toString()
      {
-       return "Title: " + this.title + "<br><br> " + this.image + "<br><br> Description: " + this.description + "<br><br> Author: " + this.author + "<br><br> Year: " + this.year;
+       return "<b>Title:  </b>" + this.title + "<br><br> <b>Author:   </b>" + this.author + "<br><br><b> Year:   </b>" + this.year + "<br><br> " + this.image + "<br><br> <b>Description: </b><br><br>" + this.description ;
 
      }
 
@@ -46,7 +46,7 @@ var myViewFinderArray = new Array();
 
      var myViewFinder5 = new ViewFinder(this.title = "Inflatable Refugee", this.image = "./images/inflatable.jpeg", this.description = "The title of this work says it all. This art project is a 20-foot inflatable refugee, hoping to focus the general public's attention on the refugee crisis. Dubbed a nomadic art project, the inflatable refugee has set out around the world to spread awareness in places like Venice, Melbourne and Copenhagen. The work, created by Belgian visual artist collective Schellekens & Peleman, is made from the same material used to make the inflatable boats many refugees use to cross the Mediterranean Sea.", this.author = "Schellekens & Peleman artist collective", this.year = "2016");
 
-     var myViewFinder6 = new ViewFinder(this.title = "Untitled wall around Donald Trump's Walk of Fame star", this.image = "./images/wall.jpeg", this.description = "his wall, conceptualized and constructed by the artist known as Plastic Jesus, was placed around the Hollywood Walk of Fame Star of Donald Trump on July 20, 2016 -- the same day Trump was officially nominated as the Republican Party's presidential nominee.Complete with barbed wired and tiny 'Keep Out' signs, the work played of Trump's controversial statements about building a wall on the southern border of the U.S. as part of a plan for immigration reform. The artist, known for progressive messages on social inequality, used the work to oppose Trump's comments.", this.author = "Plastic Jesus", this.year = "2016");
+     var myViewFinder6 = new ViewFinder(this.title = "Untitled wall around Donald Trump's Walk of Fame star", this.image = "./images/wall.jpeg", this.description = "This wall, conceptualized and constructed by the artist known as Plastic Jesus, was placed around the Hollywood Walk of Fame Star of Donald Trump on July 20, 2016 -- the same day Trump was officially nominated as the Republican Party's presidential nominee.Complete with barbed wired and tiny 'Keep Out' signs, the work played of Trump's controversial statements about building a wall on the southern border of the U.S. as part of a plan for immigration reform. The artist, known for progressive messages on social inequality, used the work to oppose Trump's comments.", this.author = "Plastic Jesus", this.year = "2016");
 
      myViewFinderArray.push(myViewFinder1);
 
