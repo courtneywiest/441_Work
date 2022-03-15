@@ -37,8 +37,8 @@ $(document).ready(function(){
     console.log(allDogs[0].theSelector);
     console.log(allDogs[0].theImagePath);
 
-    //(allDogs[0].theSelector).src = allDogs[0].theImagePath;
-    //$("#my_p").attr("src","second.jpg");
+    $(allDogs[0].theSelector).src = allDogs[0].theImagePath;
+    $("#my_p").attr("src","second.jpg");
     $(allDogs[0].theSelector).attr("src", allDogs[0].theImagePath);
 
     $("button").click(function(){
