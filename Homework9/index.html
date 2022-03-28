@@ -1,14 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>JSON Tester</title>
-</head>
-<body>
-<h1>JSON Tester</h1>
-<script src="./scripts/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="./data/jsondata.json"></script>
 
+    <script type="text/javascript">
 
-</body>
-</html>
+
+      
+                $(document).ready (function () {
+                      $("#btnSubmit").click(function(event) {
+                        $.getJSON("./data/jsondata.json")(data)
+
+                          $('$bikeInformation').html('<p> manufacturer: ' + data.manufacturer + '</p>');
+
+                        });
+                      });
+
+
+
+                  function showBikeInfo()
+                  {
+                      $("#bikeInformation").html("Manufacturer: " + bike.manufacturer
+                      + "<br>Model:" + bike.model + "<br>First Name:" + bike.owner.firstName + "<br>Last Name:"
+                      + bike.owner.lastName + "<br>Sizes Available:<br>" +
+                      bike.sizes[0] + "<br>" + bike.sizes[1] + "<br>" + bike.sizes[2] + "<br>" + bike.sizes[3]);
+                  }
+
+
+
+    </script>
+
+
+
+
+
+
+    <body>
+
+      <div id="bikeInformation"></div>
+          <button id="btnSubmit" onclick="showBikeInfo();">Show Information</button>
+
+
+
+    </body>
+  </head>
+  </html>
