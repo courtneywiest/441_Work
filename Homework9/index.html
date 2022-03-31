@@ -1,30 +1,37 @@
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="./data/jsondata.json"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="./data/jsondata.json"></script>
+
 
     <script type="text/javascript">
 
 
-      
-                $(document).ready (function () {
-                      $("#btnSubmit").click(function(event) {
-                        $.getJSON("./data/jsondata.json")(data)
 
-                          $('$bikeInformation').html('<p> manufacturer: ' + data.manufacturer + '</p>');
+      $(document).ready(function () {
+            $("button").click(function (event) {
+                $.getJSON("./data/jsondata.json", function(data){
+                    var popdata = '';
+                  $(data).each(function (key, value) {
+                    popdata += '<tr>';
+                    popdata += '<tr>' + '<td>' + "Country: <br>" + '</td>' +  '<td>' + value.countryiso3code+'</td>' + '</tr>';
 
-                        });
-                      });
+                    popdata += '<tr>' + '<td>'+ "Date: <br>" + '</td>' + '<td>' + value.date+'</td>' + '</tr>';
 
+                    popdata += '<tr>' + '<td>' + "Population: <br><br>" + '</td>' +'<td>'+value.population+'<br>' + '<br>' + '</td>' + '</tr>' ;
+                    popdata += '</tr>';
+                    });
 
+                      $('#thetable').replaceWith(popdata);
 
-                  function showBikeInfo()
-                  {
-                      $("#bikeInformation").html("Manufacturer: " + bike.manufacturer
-                      + "<br>Model:" + bike.model + "<br>First Name:" + bike.owner.firstName + "<br>Last Name:"
-                      + bike.owner.lastName + "<br>Sizes Available:<br>" +
-                      bike.sizes[0] + "<br>" + bike.sizes[1] + "<br>" + bike.sizes[2] + "<br>" + bike.sizes[3]);
-                  }
+                  });
+
+            });
+        });
+
 
 
 
@@ -37,8 +44,22 @@
 
     <body>
 
-      <div id="bikeInformation"></div>
-          <button id="btnSubmit" onclick="showBikeInfo();">Show Information</button>
+      <div id="maincontainer"></div>
+
+        <table id="thetable">
+        <tr>
+          <th> </th>
+          <th> </th>
+          <th> </th>
+        </tr>
+        </table>
+          <button id="btnSubmit" >Show Information</button>
+
+
+
+    </body>
+
+
 
 
 
