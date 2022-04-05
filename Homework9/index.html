@@ -15,7 +15,7 @@
             $("button").click(function (event) {
                 $.getJSON("./data/jsondata.json", function(data){
                     var popdata = '';
-                  $(data).each(function (key, value) {
+                  $.each(data, function (key, value) {
                     popdata += '<tr>';
                     popdata += '<tr>' + '<td>' + "Country: <br>" + '</td>' +  '<td>' + value.countryiso3code+'</td>' + '</tr>';
 
