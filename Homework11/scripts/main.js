@@ -62,6 +62,7 @@ drawSquare();
 function drawSquare()
 {
   ctx.clearRect(0,0,800,600);
+
   square1 = new Square(x,y,20,20,"#dcd0ff");
   ctx.fillStyle = square1.theColor;
   ctx.fillRect(square1.theX, square1.theY, square1.theWidth, square1.theHeight);
@@ -85,6 +86,7 @@ function getKey(event)
   if(didCollide)
     {
         document.body.style.backgroundColor = "#A7C7E7";
+        didCollide.setAttribute(width="100", height="100")
     }
     var char = event.which || event.keyCode;
     var actualLetter = String.fromCharCode(char);
