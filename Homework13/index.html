@@ -125,17 +125,14 @@ var config = {
         this.physics.add.collider(stars, platforms);
         this.physics.add.collider(spikes, platforms);
         this.physics.add.collider(bombs, platforms);
-        //this.physics.add.collider(spikes, platforms);
+        
 
        this.physics.add.overlap(player, stars, collectStar, null, this);
-
+       this.physics.add.overlap(player, spikes, Detection, null, this);
         this.physics.add.collider(player, bombs, hitBomb, null, this);
 
         
-
-        this.physics.add.overlap(player, spikes, Collided, null, this);
         
-        //this.physics.add.overlap(player, spikes, hitSpikes, null, this);
 
         
     
@@ -167,11 +164,13 @@ var config = {
             player.anims.play('turn');
         }
 
-        if (cursors.space.isDown && player.body.touching.down)
+       if (cursors.space.isDown && player.body.touching.down)
         {
-            player.setVelocityY(-330);
-        }
+         player.setVelocityY(-330);
+            console.log("down");
 
+        }
+        
         
        
     }
@@ -214,22 +213,11 @@ var config = {
     gameOver = true;
 }
 
-function Collided (player, spikes)
+function Detection (player, spikes)
 {
-   
-   console.log("ldfji");
-
-   this.physics.pause();
-
-    player.setTint(0xff0000);
-
-    player.anims.play('turn');
-
-    gameOver = true;
-    // collision detected!
+   spikes.disableBody(true, true);
     
-    }
-
+}
 
 
 
