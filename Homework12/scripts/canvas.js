@@ -2,7 +2,7 @@ var canvas;
 var ctx;
 var x = 50;
 var y = 50;
-var square1, square2;
+var square1, square2, square3;
 var direction;
 var questions;
 var squareArray = [];
@@ -32,10 +32,10 @@ function setup()
         {
             squareArray.push(new Square(data.squares[i].x,data.squares[i].y, data.squares[i].h, data.squares[i].w, data.squares[i].color));
         }
-        
+     
         drawSquare();
     });
-    
+   // square3 = new Square()
 
     
 }
