@@ -38,6 +38,7 @@ var config = {
     var platforms;
     var cursors;
     var spikes;
+    
     var score = 0;
     var gameOver = false;
     var scoreText;
@@ -109,14 +110,20 @@ var config = {
 
         });
 
+            
+        
+        
+
+
         bombs = this.physics.add.group();
+        spikes = this.physics.add.group();
 
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
 
         this.physics.add.collider(player, platforms);
         this.physics.add.collider(stars, platforms);
-        //this.physics.add.collider(spikes, platforms);
+        this.physics.add.collider(spikes, platforms);
         this.physics.add.collider(bombs, platforms);
         //this.physics.add.collider(spikes, platforms);
 
@@ -125,8 +132,12 @@ var config = {
         this.physics.add.collider(player, bombs, hitBomb, null, this);
 
         
+
+        this.physics.add.overlap(player, spikes, Collided, null, this);
+        
         //this.physics.add.overlap(player, spikes, hitSpikes, null, this);
 
+        
     
     }
 
@@ -160,6 +171,9 @@ var config = {
         {
             player.setVelocityY(-330);
         }
+
+        
+       
     }
 
     function collectStar (player, star)
@@ -200,32 +214,21 @@ var config = {
     gameOver = true;
 }
 
-//function hasCollided(player, spikes) {
-//if (player.x < spikes.x + spikes.width &&
-  // player.x + player.width > spike.x &&
-   //player.y <  spike.y + spike.height &&
-   //player.y + player.height > spikes.y); {
+function Collided (player, spikes)
+{
+   
+   console.log("ldfji");
+
+   this.physics.pause();
+
+    player.setTint(0xff0000);
+
+    player.anims.play('turn');
+
+    gameOver = true;
     // collision detected!
-   // console.log("p");
-//}
-
-//}
-
-
-//var test = collides(player, spikes);
-//var test2 = false;
-
-
-
-//function collides(object1, object2) {
- //   return !(
-  //      ((object1.y + object1.height) < (object2.y)) ||
-  //      (object1.y > (object2.y + object2.height)) ||
- //       ((object1.x + object1.width) < object2.x) ||
-  //      (object1.x > (object2.x + object2.width))
- //   );
-//}
-
+    
+    }
 
 
 
