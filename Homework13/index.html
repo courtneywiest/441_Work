@@ -133,10 +133,10 @@ var config = {
         bombs = this.physics.add.group();
         spikes = this.physics.add.sprite(200,500,'spikes');
         
+        levelText  = this.add.text(658, 16, 'level: 1', {fontSize: '25px', fill: '#000'});
+        scoreText = this.add.text(20, 16, 'score: 0', { fontSize: '25px', fill: '#000' });
 
-        scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-
-        this.physics.add.sprite(400, 300, 'spikes').setScale(.5);
+        //this.physics.add.sprite(400, 300, 'spikes').setScale(.5);
         this.physics.add.collider(player, platforms);
         this.physics.add.collider(stars, platforms);
         this.physics.add.collider(spikes, platforms);
@@ -200,6 +200,7 @@ var config = {
         score += 3;
         scoreText.setText('Score: ' + score);
 
+
     }
 
 
@@ -210,14 +211,20 @@ var config = {
         score += 10;
         scoreText.setText('Score: ' + score);
 
-        if (stars.countActive(true) === 0)
+        
+
+        if (stars.countActive(true) === 0 )
+        
     {
-        //  A new batch of stars to collect
+             //  A new batch of stars to collect
         stars.children.iterate(function (child) {
 
-            child.enableBody(true, child.x, 0, true, true);
+           child.enableBody(true, child.x, 0, true, true);
 
         });
+
+        
+
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
