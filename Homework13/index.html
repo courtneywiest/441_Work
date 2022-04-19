@@ -38,6 +38,7 @@ var config = {
     var platforms;
     var cursors;
     var spikes;
+    var bunny;
     
     var score = 0;
     var gameOver = false;
@@ -52,6 +53,7 @@ var config = {
         this.load.image('star', 'assets/star.png');
         this.load.image('bomb', 'assets/bomb.png');
         this.load.image('spikes', 'assets/spikes.png');
+        this.load.image('bunny', 'assets/wabbit.png');
         this.load.spritesheet('dude', 'assets/justrainbowcircle.png', { frameWidth: 31.8, frameHeight: 30});
         
         
@@ -65,14 +67,15 @@ var config = {
 
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
-        platforms.create(200, 506, 'spikes');
-
+        
+        
         platforms.create(600, 400, 'ground');
-        platforms.create(50, 250, 'ground');
+        
         platforms.create(750, 220, 'ground');
+        platforms.create(330, 300, 'ground').setScale(.1, 1).refreshBody();
 
-        player = this.physics.add.sprite(26, 37, 'dude');
-
+        player = this.physics.add.sprite(45, -100, 'dude');
+        platforms.create(50, 250, 'ground');
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
 
@@ -101,7 +104,7 @@ var config = {
         stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
-            setXY: { x: 12, y: 0, stepX: 70 }
+            setXY: { x: 12, y: 0, stepX: 76 }
         });
 
         stars.children.iterate(function (child) {
@@ -110,25 +113,41 @@ var config = {
 
         });
 
-            
+        bunny = this.physics.add.group({
+            key: 'bunny',
+            repeat: 4,
+            setXY: { x: 116, y: 0, stepX: 158 }
+        });
+
+        stars.children.iterate(function (child) {
+
+            child.setBounceY(Phaser.Math.FloatBetween(0.1, 0.1));
+
+        });
+
+        
         
         
 
 
         bombs = this.physics.add.group();
-        spikes = this.physics.add.group();
+        spikes = this.physics.add.sprite(200,500,'spikes');
+        
 
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
-
+        this.physics.add.sprite(400, 300, 'spikes').setScale(.5);
         this.physics.add.collider(player, platforms);
         this.physics.add.collider(stars, platforms);
         this.physics.add.collider(spikes, platforms);
         this.physics.add.collider(bombs, platforms);
+        this.physics.add.collider(bunny, platforms);
         
 
        this.physics.add.overlap(player, stars, collectStar, null, this);
+       this.physics.add.overlap(player, bunny, collectB, null, this);
        this.physics.add.overlap(player, spikes, Detection, null, this);
+      
         this.physics.add.collider(player, bombs, hitBomb, null, this);
 
         
@@ -174,6 +193,15 @@ var config = {
         
        
     }
+    function collectB (player, bunny)
+    {
+        bunny.disableBody(true, true);
+
+        score += 3;
+        scoreText.setText('Score: ' + score);
+
+    }
+
 
     function collectStar (player, star)
     {
@@ -215,8 +243,18 @@ var config = {
 
 function Detection (player, spikes)
 {
-   spikes.disableBody(true, true);
+    this.physics.pause();
+
+player.setTint(0xff0000);
+
+player.anims.play('turn');
+
+gameOver = true;
+
+location.reload();
     
+//console.log("i");
+
 }
 
 
