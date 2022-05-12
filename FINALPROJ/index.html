@@ -46,6 +46,12 @@ var config = {
 
     var game = new Phaser.Game(config);
 
+
+
+
+
+
+
     function preload ()
     {
         this.load.image('sky', 'assets/sky.png');
@@ -59,11 +65,29 @@ var config = {
         
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     function create ()
 {
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
+    
+    
+    
+    spikes = this.physics.add.group();
 
+    spikes.create(130, 400, 'spikes');
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = this.physics.add.staticGroup();
 
@@ -72,16 +96,22 @@ var config = {
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
     //  Now let's create some ledges
-    platforms.create(600, 400, 'ground');
-    platforms.create(50, 250, 'ground');
-    platforms.create(750, 220, 'ground');
+    platforms.create(650, 400, 'ground');
+    platforms.create(120, 250, 'ground').setScale(.4, 1).refreshBody();
+    platforms.create(750,160, 'ground');
+    platforms.create(360, 300, 'ground').setScale(.2, 1).refreshBody();
+
+
 
     // The player and its settings
-    player = this.physics.add.sprite(100, 450, 'dude');
+    player = this.physics.add.sprite(700,300, 'dude');
 
     //  Player physics properties. Give the little guy a slight bounce.
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
+
+    
+
 
     //  Our player animations, turning, walking left and walking right.
     this.anims.create({
@@ -122,6 +152,7 @@ var config = {
     });
 
     bombs = this.physics.add.group();
+   
 
     //  The score
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -131,11 +162,19 @@ var config = {
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
+    this.physics.add.collider(player, spikes);
+    this.physics.add.collider(spikes, platforms);
+    //this.physics.add.collider(spikes, platforms);
+   // this.physics.add.collider(spikes, player);
 
     //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
     this.physics.add.overlap(player, stars, collectStar, null, this);
+    this.physics.add.collider(player, spikes, hitSpike, null, this);
+
+   // this.physics.add.overlap(player, spikes, hitSpike, null, this);
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
+
 }
 
 function update ()
@@ -214,8 +253,17 @@ function hitBomb (player, bomb)
     gameOver = true;
 }
 
+function hitSpike(player, spikes) 
+{
+    console.log("wref");
+    this.physics.pause();
 
+    player.setTint(0xff0000);
 
+    player.anims.play('turn');
+
+    gameOver = true;
+}
 
 
 
