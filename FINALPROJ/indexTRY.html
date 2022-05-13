@@ -23,7 +23,7 @@
         var levelText;
         var collectStar = true;
         
-        
+
 
 
 
@@ -171,23 +171,11 @@
                 }
 
                
-                this.physics.add.collider(
-                    player, 
-                    stars, 
-                    function (player, stars)
-                    {
-                        if (player.body.touching && stars.body.touching)
-                            {
-                                
-                                    
-                                   
-                                    console.log("lseifj");
-                                
 
-                            }
+                
+                    function hitStar(player, stars) {
+                        stars.disableBody(true, true,);
                     }
-                )
-
                 
 
                 
