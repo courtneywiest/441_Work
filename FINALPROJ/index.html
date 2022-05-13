@@ -82,7 +82,7 @@ var config = {
 {
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
-    this.add.image( 'spikes', 0);
+    //this.add.image( 'spikes', 0);
     
     
     
@@ -95,10 +95,33 @@ var config = {
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
     //  Now let's create some ledges
-    platforms.create(650, 400, 'ground');
+    //platforms.create(650, 400, 'ground');
     platforms.create(120, 250, 'ground').setScale(.4, 1).refreshBody();
-    platforms.create(750,160, 'ground');
-    platforms.create(360, 300, 'ground').setScale(.2, 1).refreshBody();
+    //platforms.create(750,160, 'ground');
+    //platforms.create(360, 300, 'ground').setScale(.2, 1).refreshBody();
+
+
+
+    var x1 = Phaser.Math.Between(670, 700); 
+    var y1 = Phaser.Math.Between(140, 140);
+    platforms.create(x1, y1, 'ground').setScale(.2, 1).refreshBody();
+
+    var x2 = Phaser.Math.Between(640, 750);
+    var y2 = Phaser.Math.Between(300, 300);
+    platforms.create(x2, y2, 'ground').setScale(1, 1).refreshBody();
+
+    var x3 = Phaser.Math.Between(400, 400);
+    var y3 = Phaser.Math.Between(390, 435);
+    platforms.create(x3, y3, 'ground').setScale(.3, 1).refreshBody();
+
+    var x4 = Phaser.Math.Between(320, 320);
+    var y4 = Phaser.Math.Between(130, 190);
+    platforms.create(x4, y4, 'ground').setScale(.3, 1).refreshBody();
+
+
+
+
+
 
 
 
@@ -106,6 +129,9 @@ var config = {
     player = this.physics.add.sprite(700,300, 'dude');
     player.body.checkCollision.down = true;
     spikes = this.physics.add.sprite(130, 300, 'spikes');
+
+
+    
     spikes.body.checkCollision.down = true;
 
    
@@ -193,7 +219,7 @@ var config = {
 
     //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
     this.physics.add.overlap(player, stars, collectStar, null, this);
-    this.physics.add.collider(player, spikes, hitSpike, null, this);
+    this.physics.add.overlap(player, spikes, hitSpike, null, this);
 
    // this.physics.add.overlap(player, spikes, hitSpike, null, this);
 
@@ -275,11 +301,14 @@ player.setTint(0xff0000);
 
 player.anims.play('turn');
 
-gameOver = true;
+//gameOver = true;
 
     setTimeout(() => {
         this.scene.restart();
 }, 2000);
+
+    score = 0;
+    level = 1;
 
 }
     
@@ -294,11 +323,14 @@ player.setTint(0xff0000);
 
 player.anims.play('turn');
 
-gameOver = true;
+//gameOver = true;
 
     setTimeout(() => {
         this.scene.restart();
 }, 2000);
+
+    score = 0;
+    level = 1;
 
 }
 

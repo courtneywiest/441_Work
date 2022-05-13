@@ -22,8 +22,6 @@
         var scoreText;
         var levelText;
         var collectStar = true;
-        
-
 
 
 
@@ -47,11 +45,16 @@
                 //this.load.image('bunny', 'assets/wabbit.png');
                 this.load.spritesheet('dude', 'assets/justrainbowcircle.png', { frameWidth: 31.8, frameHeight: 30 });
 
+
+
+
+
             }
 
             create() {
                 //  A simple background for our game
                 this.add.image(400, 300, 'sky');
+                this.add.image(140, 510, 'spikes');
 
                 //  The platforms group contains the ground and the 2 ledges we can jump on
                 platforms = this.physics.add.staticGroup();
@@ -66,7 +69,7 @@
                 platforms.create(750, 220, 'ground');
 
                 // The player and its settings
-                player = this.physics.add.sprite(100, 450, 'dude');
+                player = this.physics.add.sprite(500, 300, 'dude');
 
                 //  Player physics properties. Give the little guy a slight bounce.
                 player.setBounce(0.2);
@@ -111,6 +114,7 @@
                 });
 
                 bombs = this.physics.add.group();
+                spikes = this.physics.add.group()
 
                 //  The score
                 scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -120,29 +124,31 @@
                 this.physics.add.collider(player, platforms);
                 this.physics.add.collider(stars, platforms);
                 this.physics.add.collider(bombs, platforms);
+                
 
                 
-               
                 //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
-                //this.physics.add.collider(this.player, this.stars, false, this).name = 'platform_collider';
-
-                //var starCollider = this.physics.add.overlap(player, stars);
-
+               this.physics.add.collider(player, stars, collectStar, null, this);
+               this.physics.add.collider(player, stars, hitSpike, null, this);
                 
-               // this.physics.world.removeCollider(starCollider);
+               function collectStar(player, star)
+            {
+                star.disableBody(true, true);
 
+                score += 10;
+    scoreText.setText('Score: ' + score);
+            }
 
-
-
-
-
-
-
+            function hitSpike(player, spikes)
+            {
+                player.disableBody(true, true);
+                console.log("75");
+            }
 
 
             }
 
-
+           
 
 
             update() {
@@ -171,24 +177,13 @@
                 }
 
                
-
+               
                 
-                    function hitStar(player, stars) {
-                        stars.disableBody(true, true,);
-                    }
-                
-
-                
-
-
 
 
             }
-
-
-           // collectStar (player, stars) {
-               // star.kill();
-           // }
+            
+           
 
         }
 
@@ -232,7 +227,6 @@
 
         const phaserConfig = {
             type: Phaser.AUTO,
-            parent: 'game',
             width: 800,
             height: 600,
             physics: {
